@@ -1,0 +1,15 @@
+import { createContext, useState } from "react";
+
+ const FormContext = createContext();
+
+ function FormContextProvider({ children }) {
+  const [hasFormData, setHasFormData] = useState(false);
+
+  return (
+    <FormContext.Provider value={{ hasFormData, setHasFormData }}>
+      {children}
+    </FormContext.Provider>
+  );
+}
+
+export { FormContext, FormContextProvider };
